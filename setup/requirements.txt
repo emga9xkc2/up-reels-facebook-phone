@@ -17,7 +17,7 @@ pyotp
 #pyautogui
 eel
 comtypes
-#pytesseract
+pytesseract
 Pillow
 
 wmi
