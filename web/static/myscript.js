@@ -101,12 +101,15 @@ function setCheckboxCssSelector(cssSelector, check) {
 
 function setValueCssSelector(cssSelector, html) {
     $(cssSelector).val(function (index, currentValue) {
+        if (currentValue === "") {
+            return html.trim();
+        }
         currentValue = currentValue.split(" => ");
         if (currentValue.length == 0) {
             currentValue = "";
+        } else {
+            currentValue = currentValue[currentValue.length - 1];
         }
-        currentValue = currentValue[currentValue.length - 1];
-
         return (currentValue + " => " + html).trim();
         // const parts = currentValue.split(" => ");
         // parts.pop(); // Remove the last element
