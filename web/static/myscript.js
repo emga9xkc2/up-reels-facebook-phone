@@ -59,9 +59,7 @@ function pythonToJS(x) {
 function setHtmlCssSelector(cssSelector, html) {
     $(cssSelector).html(html);
 }
-function setValueCssSelector(cssSelector, value) {
-    $(cssSelector).val(html);
-}
+
 eel.expose(removeCssSelector);
 eel.expose(addRowTable);
 eel.expose(pythonToJS);
@@ -102,7 +100,18 @@ function setCheckboxCssSelector(cssSelector, check) {
 }
 
 function setValueCssSelector(cssSelector, html) {
-    $(cssSelector).val(html);
+    $(cssSelector).val(function (index, currentValue) {
+        currentValue = currentValue.split(" => ");
+        if (currentValue.length == 0) {
+            currentValue = "";
+        }
+        currentValue = currentValue[currentValue.length - 1];
+
+        return (currentValue + " => " + html).trim();
+        // const parts = currentValue.split(" => ");
+        // parts.pop(); // Remove the last element
+        // return parts.join(" => ") + " => " + html;
+    });
 }
 function setSelectByText(cssSelector, text) {
     $(cssSelector)
