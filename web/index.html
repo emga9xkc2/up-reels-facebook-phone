@@ -988,7 +988,7 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                             const colIndex = event.target.cellIndex;
                             const rowIndex = event.target.parentNode.rowIndex;
                             row = table.rows[rowIndex];
-                            // console.log(row.innerHTML);
+                            console.log(row);
                             selectedData = row.innerHTML;
                             statusElm = row.querySelector('input[name="status"]')
                             statusValue = ""
@@ -1010,6 +1010,7 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                         <div class="menu-item" id="select-item">Select</div>
                         <div class="menu-item" id="deselect-item">Deselect</div>
             <div class="menu-item" id="copy-item">Copy</div>
+            <div class="menu-item" id="view-screen">Mở màn hình</div>
             <div class="menu-item" id="selectall-item">Select all mails</div>
             <div class="menu-item" id="selectall-item-no-running">Select mails that has not been run</div>
             <div class="menu-item" id="selectall-item-running">Select mails has been running</div>
@@ -1091,6 +1092,9 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                                     //     alert("Delete email failed")
                                     // }
                                 });
+                            });
+                            $("#view-screen").bind("click", function () {
+                                alert(selectedData)
                             });
                             $("#exportall-item").bind("click", function () {
                                 if (selected.length == 0) {

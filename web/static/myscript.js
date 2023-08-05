@@ -65,6 +65,7 @@ eel.expose(addRowTable);
 eel.expose(pythonToJS);
 eel.expose(setHtmlCssSelector);
 eel.expose(setValueCssSelector);
+eel.expose(setValueCssSelectorOnly);
 eel.expose(toastError);
 eel.expose(toastSuccess);
 eel.expose(toastWarning);
@@ -97,6 +98,11 @@ function getCheckboxChecked(cssSelector) {
 
 function setCheckboxCssSelector(cssSelector, check) {
     $(cssSelector).prop("checked", check);
+}
+
+function setValueCssSelectorOnly(cssSelector, html) {
+    document.querySelector(cssSelector).value = html;
+    // $(cssSelector).val(html);
 }
 
 function setValueCssSelector(cssSelector, html) {
