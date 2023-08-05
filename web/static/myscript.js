@@ -101,8 +101,9 @@ function setCheckboxCssSelector(cssSelector, check) {
 }
 
 function setValueCssSelectorOnly(cssSelector, html) {
-    document.querySelector(cssSelector).value = html;
-    // $(cssSelector).val(html);
+    // document.querySelector(cssSelector).value = html;
+    $(cssSelector).val(html);
+    $(cssSelector).attr("newvalue", html);
 }
 
 function setValueCssSelector(cssSelector, html) {

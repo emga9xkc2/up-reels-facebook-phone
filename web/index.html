@@ -1094,7 +1094,13 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                                 });
                             });
                             $("#view-screen").bind("click", function () {
-                                alert(selectedData)
+                                statusElm = row.querySelector('input[name="proxy"]')
+                                value = (statusElm.getAttribute("newvalue"))
+                                if (value == null) {
+                                    return
+                                }
+                                eel.view_screen(value)
+
                             });
                             $("#exportall-item").bind("click", function () {
                                 if (selected.length == 0) {
