@@ -721,6 +721,9 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                         if (key.startsWith("check_")) {
                             var id = key.split("_")[1]
                             var istrue = strToBool(value)
+                            if (istrue) {
+                                // alert(id)
+                            }
                             $("#" + id).prop("checked", istrue);
 
                         }
