@@ -659,9 +659,9 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                     }
                 }
                 var checkbox = $("#" + id);
-                if (id === "verifyphone") {
-                    var html = '<button class="settingcss" name="main" id="configverifyphone" title="Config verify phone"><i class="fa fa-cog"></i></button>';
-                    checkbox.prop("checked") ? (checkbox.next("label").after(html), $('#configverifyphone').bind('click', function () { eel.openFile("verifyphone.txt", "setup/temp-data/verifyphone.txt") })) : checkbox.next("label").next("button.settingcss").remove();
+                if (id === "thongbaotelegram") {
+                    var html = '<button class="settingcss" name="main" id="configthongbaotelegram" title="Cài đặt thông báo telegram"><i class="fa fa-cog"></i></button>';
+                    checkbox.prop("checked") ? (checkbox.next("label").after(html), $('#configthongbaotelegram').bind('click', function () { eel.openFile("thongbaotelegram.txt") })) : checkbox.next("label").next("button.settingcss").remove();
                 }
                 if (id === "youtubeverify") {
                     var html = '<button class="settingcss" name="main" id="configyoutubeverify" title="Config verify youtube"><i class="fa fa-cog"></i></button>';
