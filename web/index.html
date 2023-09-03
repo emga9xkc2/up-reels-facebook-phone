@@ -151,7 +151,7 @@
                     <button class="btn" id="tab_folder" title="Open data folder"><i class="fa fa-folder"></i></button>
                     <button class="btn" id="tab_xemnhatkyupload" title="Xem nhật ký upload"><i
                             class="fa fa-eye-slash"></i></button>
-                    <button class="btn" id="tab_xoaprofile" title="Xóa profile"><i class="fa fa-trash"></i></button>
+                    <button class="btn" id="tab_xoaprofile" title="Xóa mail"><i class="fa fa-minus-circle"></i></button>
                 </div>
                 <div class="khoangcach">
                     <button class="btn" style="color: red;" id="stop" title="Stop"><i class="fa fa-stop"></i></button>
@@ -371,7 +371,7 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
             <div class="dialog-content">
                 <textarea class="lang" id="dialog_txt_input" rows="20"
                     style="width: 100%; resize: none;border: 1px solid #ccc;"
-                    placeholder="Nhập danh sách uid cần xóa profile"></textarea>
+                    placeholder="Nhập danh sách uid cần xóa"></textarea>
                 <br>
                 <div id="addbutton"></div>
 
@@ -514,7 +514,8 @@ uid	mật_khẩu	key2fa	cookie	proxy	allpage"></textarea>
                 $("#dialog_txt_btn").bind('click', function () {
                     var value = $("#dialog_txt_input").val()
                     eel.xoa_profile(value)(function (callback) {
-
+                        updateMails(0)
+                        selected = []
                     })
                     dialog.style.display = "none";
                 })
